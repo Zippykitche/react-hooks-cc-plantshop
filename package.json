@@ -15,7 +15,7 @@
     "postinstall": "npm install react-scripts",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "npx react-scripts build",
     "start": "react-scripts start",
     "server": "json-server --watch db.json -p 6001",
     "test": "jest --bail"
@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "react-scripts": "^5.0.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^14.5.2",
