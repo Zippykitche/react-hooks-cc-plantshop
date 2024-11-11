@@ -5,7 +5,7 @@ const [formData, setFormData] = useState({name: "", image: "", price: ""});
 
 function handleSubmit(event){
   event.preventDefault();
- fetch("https://my-json-server.typicode.com/ZippyKitche/react-hooks-cc-plantshop/plants", {
+ fetch("https://react-hooks-cc-plantshop-2um2.onrender.com/plants", {
   method: "POST",
   headers: {
     "Content-Type": "Application/JSON",
