@@ -9,7 +9,7 @@ function PlantPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:6001/plants")
+    fetch("https://my-json-server.typicode.com/ZippyKitche/react-hooks-cc-plantshop/plants")
       .then((response) => response.json())
       .then((data) => {
         setPlants(data);
@@ -29,7 +29,7 @@ function onSearch(term){
 }
 
 const onUpdatePrice = (id, newPrice) => { 
-  fetch(`http://localhost:6001/plants/${id}`, {
+  fetch(`https://my-json-server.typicode.com/ZippyKitche/react-hooks-cc-plantshop/plants/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const onUpdatePrice = (id, newPrice) => {
 };
 
 const onDelete = (id) => {
-  fetch(`http://localhost:6001/plants/${id}`, {
+  fetch(`https://my-json-server.typicode.com/ZippyKitche/react-hooks-cc-plantshop/plants/${id}`, {
      method: 'DELETE',
      })
     .then(() => {
