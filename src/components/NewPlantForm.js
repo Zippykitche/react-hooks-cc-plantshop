@@ -2,10 +2,11 @@ import React, {useState} from "react";
 
 function NewPlantForm({onAddPlant}) {
 const [formData, setFormData] = useState({name: "", image: "", price: ""});
+const apiUrl = 'https://my-json-server.typicode.com/Zippykitche/react-hooks-cc-plantshop/plants';
 
 function handleSubmit(event){
   event.preventDefault();
- fetch("https://react-hooks-cc-plantshop-2um2.onrender.com/plants", {
+ fetch(`${apiUrl}`, {
   method: "POST",
   headers: {
     "Content-Type": "Application/JSON",

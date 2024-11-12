@@ -6,14 +6,18 @@ import Search from "./Search";
 function PlantPage() {
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const apiUrl = 'https://my-json-server.typicode.com/Zippykitche/react-hooks-cc-plantshop/plants';
 
+  
   useEffect(() => {
-    fetch("https://react-hooks-cc-plantshop-2um2.onrender.com/plants")
+    fetch(`${apiUrl}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data); 
         setPlants(data);
       });
   }, []);
+  
 
 function onAddPlant(newPlant){
   setPlants([...plants, newPlant]);
@@ -28,7 +32,7 @@ function onSearch(term){
 }
 
 const onUpdatePrice = (id, newPrice) => { 
-  fetch(`https://react-hooks-cc-plantshop-2um2.onrender.com/plants/${id}`, {
+  fetch(`${apiUrl}/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -47,7 +51,7 @@ const onUpdatePrice = (id, newPrice) => {
 };
 
 const onDelete = (id) => {
-  fetch(`https://react-hooks-cc-plantshop-2um2.onrender.com/plants/${id}`, {
+  fetch(`${apiUrl}/${id}`, {
      method: 'DELETE',
      })
     .then(() => {
