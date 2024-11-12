@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
-import { v4 as uuidv4 } from 'uuid';
+
 
 function PlantPage() {
   const [plants, setPlants] = useState([]);
